@@ -34,5 +34,5 @@ Ran all test suites.
 
 ```
 $ cd ./js-practices/02.calendar
-$ npx eslint cal.js
+$ npx eslint cal.js calendar.js
 ```
