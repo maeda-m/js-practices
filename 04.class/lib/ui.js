@@ -26,8 +26,8 @@ class UI {
     })
   }
 
-  #choices () {
-    const records = this.#repository.all()
+  async #choices () {
+    const records = await this.#repository.all()
     return records.map((record) => {
       return {
         name: record.title,

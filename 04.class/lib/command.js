@@ -8,15 +8,17 @@ class Command {
   }
 
   index () {
-    const records = this.#repository.all()
-    records.forEach((record) => {
-      console.log(record.title)
+    this.#repository.all().then((records) => {
+      records.forEach((record) => {
+        console.log(record.title)
+      })
     })
   }
 
   show (id) {
-    const record = this.#repository.find(id)
-    console.log(record.content)
+    this.#repository.find(id).then((record) => {
+      console.log(record.content)
+    })
   }
 
   destroy (id) {
