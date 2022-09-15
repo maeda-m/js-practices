@@ -2,11 +2,12 @@
 
 ## 実行方法
 
-### 共通
+### 事前準備
 
 ```
 $ cd ./js-practices/04.class
 $ npm install
+$ sqlite3 db/${USER}.sqlite3 < db/initdb.sql
 ```
 
 ### 追加
