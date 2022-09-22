@@ -12,28 +12,22 @@ class UI {
 
   select (message) {
     const choices = this.#choices()
+    const result = (answer) => prompt.map(answer)
     const prompt = new Select({
       message,
       choices,
-      result (answer) {
-        return this.map(answer)
-      }
+      result
     })
 
-    return prompt.run().then((choice) => {
-      const id = Object.values(choice)[0]
-      return id
-    })
+    return prompt.run().then((choice) => Object.values(choice)[0])
   }
 
   async #choices () {
     const records = await this.#repository.all()
-    return records.map((record) => {
-      return {
-        name: record.title,
-        value: record.id
-      }
-    })
+    return records.map((record) => ({
+      name: record.title,
+      value: record.id
+    }))
   }
 
   input () {

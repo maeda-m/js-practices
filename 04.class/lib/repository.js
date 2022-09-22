@@ -34,9 +34,7 @@ class Repository {
     const db = await this.#connect()
     const sql = 'SELECT * FROM notes ORDER BY id;'
     const rows = await db.all(sql)
-    this.#records = rows.map((attrs) => {
-      return new Note(attrs)
-    })
+    this.#records = rows.map((attrs) => new Note(attrs))
     await db.close()
 
     return this.#records
@@ -44,9 +42,7 @@ class Repository {
 
   async find (id) {
     const records = await this.all()
-    return records.find((record) => {
-      return record.id === id
-    })
+    return records.find((record) => record.id === id)
   }
 
   async create (content) {
