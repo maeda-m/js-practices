@@ -20,12 +20,6 @@ class Repository {
     })
   }
 
-  async exec (sql) {
-    const db = await this.#connect()
-    await db.exec(sql)
-    await db.close()
-  }
-
   async all () {
     if (this.#records) {
       return this.#records
