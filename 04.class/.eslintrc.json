@@ -1,3 +1,6 @@
 {
-  "extends": "standard"
+  "extends": "standard",
+  "rules": {
+    "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": false }]
+  }
 }
